@@ -1,12 +1,12 @@
 .quick-action-sheet {
   position: absolute;
-  bottom: 90px;
+  bottom: 96px;
   left: 20px;
   right: 20px;
-  background: var(--surface);
-  border: 1px solid var(--border);
+  background: var(--surface-strong);
+  border: 1px solid var(--border-bright);
   border-radius: var(--radius-md);
-  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(24px);
   overflow: hidden;
   z-index: 20;
   animation: sheet-up 0.15s ease-out;
