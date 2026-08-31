@@ -24,3 +24,25 @@ async function fetchStatus() {
     };
   }
 }
+
+async function fetchContacts() {
+  try {
+    const response = await fetch(`${BACKEND_URL}/api/contacts`);
+    if (!response.ok) throw new Error("Backend responded with an error");
+    const data = await response.json();
+    return data.contacts;
+  } catch (err) {
+    return [];
+  }
+}
+
+async function fetchContactMessages(contactName) {
+  try {
+    const response = await fetch(`${BACKEND_URL}/api/contacts/${encodeURIComponent(contactName)}/messages`);
+    if (!response.ok) throw new Error("Backend responded with an error");
+    const data = await response.json();
+    return data.messages;
+  } catch (err) {
+    return [];
+  }
+}
