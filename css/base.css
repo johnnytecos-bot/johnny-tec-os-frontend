@@ -1,28 +1,35 @@
 /* ===== Design tokens ===== */
 :root {
-  --bg-page: #E9ECFB;
-  --bg-gradient: linear-gradient(160deg, #EEF0FC 0%, #E3E7FA 100%);
-  --surface: #FFFFFF;
-  --surface-soft: #F5F6FD;
+  --bg-page: #0A0E1C;
+  --bg-gradient: radial-gradient(circle at 80% 0%, rgba(108, 99, 255, 0.18), transparent 45%),
+                 radial-gradient(circle at 0% 100%, rgba(90, 60, 220, 0.12), transparent 40%),
+                 #0A0E1C;
 
-  --primary: #4B54E0;
-  --primary-dark: #3A42C4;
-  --primary-soft: #EEF0FE;
+  --surface: rgba(255, 255, 255, 0.035);
+  --surface-soft: rgba(255, 255, 255, 0.02);
+  --surface-strong: rgba(255, 255, 255, 0.06);
 
-  --text-primary: #171B33;
-  --text-secondary: #6B7089;
-  --text-muted: #9B9FB5;
+  --primary: #6C63FF;
+  --primary-bright: #857CFF;
+  --primary-dark: #4B44C9;
+  --primary-soft: rgba(108, 99, 255, 0.14);
 
-  --online: #22C55E;
-  --offline: #E4574C;
+  --text-primary: #F4F5FB;
+  --text-secondary: #9BA0C2;
+  --text-muted: #5C6185;
 
-  --border: #E7E9F5;
-  --shadow-card: 0 8px 24px rgba(43, 48, 110, 0.08);
-  --shadow-nav: 0 -4px 20px rgba(43, 48, 110, 0.06);
+  --online: #2FE28A;
+  --offline: #FF5D72;
 
-  --radius-lg: 24px;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-bright: rgba(255, 255, 255, 0.14);
+
+  --shadow-card: 0 8px 30px rgba(0, 0, 0, 0.35);
+  --shadow-glow: 0 0 40px rgba(108, 99, 255, 0.25);
+
+  --radius-lg: 22px;
   --radius-md: 16px;
-  --radius-sm: 10px;
+  --radius-sm: 12px;
 
   --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
@@ -31,6 +38,13 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  height: 100%;
+  overscroll-behavior: none;
+  touch-action: manipulation;
 }
 
 body {
@@ -43,23 +57,27 @@ body {
   justify-content: center;
 }
 
-/* ===== Fixed app frame ===== */
+/* ===== Fixed app frame - no zoom, no resize ===== */
 .app-frame {
   width: 390px;
   height: 844px;
-  background: var(--surface);
+  background: var(--bg-page);
   border-radius: 40px;
   box-shadow: var(--shadow-card);
   overflow: hidden;
   position: relative;
   display: flex;
   flex-direction: column;
+  border: 1px solid var(--border);
 }
 
 .app-screen {
   flex: 1;
   overflow-y: auto;
-  padding: 20px 20px 100px 20px;
+  overflow-x: hidden;
+  padding: 20px 20px 110px 20px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .app-screen::-webkit-scrollbar {
@@ -71,34 +89,26 @@ body {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
-  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(20px);
 }
 
 .pill {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 4px 12px;
-  border-radius: 999px;
   font-size: 12px;
   font-weight: 600;
 }
 
-.pill-online {
-  background: rgba(34, 197, 94, 0.1);
-  color: var(--online);
-}
-
-.pill-offline {
-  background: rgba(228, 87, 76, 0.1);
-  color: var(--offline);
-}
+.pill-online { color: var(--online); }
+.pill-offline { color: var(--offline); }
 
 .dot {
-  width: 7px;
-  height: 7px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: currentColor;
+  box-shadow: 0 0 6px currentColor;
 }
 
 @media (max-width: 420px) {
@@ -106,5 +116,6 @@ body {
     width: 100vw;
     height: 100vh;
     border-radius: 0;
+    border: none;
   }
 }
