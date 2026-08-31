@@ -3,14 +3,14 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 84px;
-  background: var(--surface);
+  height: 88px;
+  background: rgba(10, 14, 28, 0.85);
+  backdrop-filter: blur(20px);
   border-top: 1px solid var(--border);
-  box-shadow: var(--shadow-nav);
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding-bottom: 16px;
+  padding-bottom: 18px;
   z-index: 10;
 }
 
@@ -29,7 +29,7 @@
 }
 
 .nav-item.active {
-  color: var(--primary);
+  color: var(--primary-bright);
 }
 
 .nav-item svg {
@@ -38,17 +38,17 @@
 }
 
 .nav-center {
-  width: 56px;
-  height: 56px;
+  width: 58px;
+  height: 58px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  background: linear-gradient(135deg, var(--primary-bright), var(--primary-dark));
   display: flex;
   align-items: center;
   justify-content: center;
   border: none;
   cursor: pointer;
-  margin-top: -28px;
-  box-shadow: 0 8px 16px rgba(75, 84, 224, 0.35);
+  margin-top: -30px;
+  box-shadow: var(--shadow-glow), 0 6px 16px rgba(0, 0, 0, 0.4);
 }
 
 .nav-center svg {
