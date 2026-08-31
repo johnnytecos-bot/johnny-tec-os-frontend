@@ -1,9 +1,9 @@
 const NAV_ITEMS = [
-  { id: "home", label: "Home", href: "/index.html" },
-  { id: "chats", label: "Chats", href: "/pages/chats.html" },
-  { id: "center", label: "", href: null },
-  { id: "automations", label: "Automations", href: "/pages/automations.html" },
-  { id: "memory", label: "Memory", href: "/pages/memory.html" }
+  { id: "home", label: "Home", target: "index.html" },
+  { id: "chats", label: "Chats", target: "pages/chats.html" },
+  { id: "center", label: "", target: null },
+  { id: "automations", label: "Automations", target: "pages/automations.html" },
+  { id: "memory", label: "Memory", target: "pages/memory.html" }
 ];
 
 const NAV_ICONS = {
@@ -12,6 +12,13 @@ const NAV_ICONS = {
   automations: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg>`,
   memory: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/></svg>`
 };
+
+// Works whether the site is hosted at a domain root or a subpath (e.g. GitHub Pages project sites)
+function resolveNavTarget(target) {
+  const insidePages = window.location.pathname.includes("/pages/");
+  if (!insidePages) return target;
+  return target.startsWith("pages/") ? target.replace("pages/", "") : `../${target}`;
+}
 
 function renderNav(activePage) {
   const nav = document.createElement("div");
@@ -31,7 +38,7 @@ function renderNav(activePage) {
     btn.className = "nav-item" + (item.id === activePage ? " active" : "");
     btn.innerHTML = `${NAV_ICONS[item.id]}<span>${item.label}</span>`;
     btn.addEventListener("click", () => {
-      if (item.href) window.location.href = item.href;
+      if (item.target) window.location.href = resolveNavTarget(item.target);
     });
     nav.appendChild(btn);
   });
