@@ -5,104 +5,256 @@
   margin-bottom: 20px;
 }
 
-.home-header h1 {
-  font-size: 22px;
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.menu-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-btn svg {
+  width: 18px;
+  height: 18px;
+  stroke: var(--text-secondary);
+}
+
+.brand h1 {
+  font-size: 18px;
   font-weight: 700;
 }
 
-.home-header p {
-  font-size: 13px;
-  color: var(--text-secondary);
-  margin-top: 2px;
+.brand h1 span {
+  color: var(--primary-bright);
+}
+
+.brand p {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 1px;
 }
 
 .avatar {
-  width: 38px;
-  height: 38px;
+  position: relative;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background: var(--primary-soft);
+  background: var(--surface-strong);
+  border: 1px solid var(--border-bright);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
 }
 
-/* System status card */
-.status-card {
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+.avatar .status-dot {
+  position: absolute;
+  bottom: -1px;
+  right: -1px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--online);
+  border: 2px solid var(--bg-page);
+}
+
+/* ===== Hero status card ===== */
+.hero-card {
+  position: relative;
   border-radius: var(--radius-lg);
-  padding: 20px;
-  color: white;
+  padding: 22px 20px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  min-height: 220px;
+  background:
+    radial-gradient(circle at 75% 30%, rgba(108, 99, 255, 0.35), transparent 60%),
+    linear-gradient(180deg, rgba(20, 22, 46, 0.9), rgba(12, 14, 28, 0.95));
+  border: 1px solid var(--border-bright);
+}
+
+.hero-eyebrow {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+}
+
+.hero-title {
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1.15;
+  max-width: 65%;
+}
+
+.hero-title .accent {
+  color: var(--primary-bright);
+}
+
+.hero-sub {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 8px;
+  max-width: 60%;
+}
+
+.hero-image {
+  position: absolute;
+  right: -10px;
+  bottom: -10px;
+  width: 160px;
+  height: 160px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 30px rgba(108, 99, 255, 0.45));
+}
+
+.hero-image-placeholder {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  width: 130px;
+  height: 130px;
+  border-radius: var(--radius-md);
+  border: 1px dashed var(--border-bright);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 10px;
+  color: var(--text-muted);
+  padding: 8px;
+  line-height: 1.4;
+}
+
+/* ===== Service grid ===== */
+.service-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
   margin-bottom: 20px;
 }
 
-.status-card-title {
-  font-size: 13px;
-  opacity: 0.85;
-  margin-bottom: 14px;
+.service-box {
+  padding: 12px 10px;
+  border-radius: var(--radius-sm);
 }
 
-.service-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
+.service-icon {
+  width: 26px;
+  height: 26px;
+  margin-bottom: 8px;
 }
 
-.service-row {
+.service-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.service-name {
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+/* ===== Section headers ===== */
+.section-title-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(255, 255, 255, 0.12);
-  border-radius: var(--radius-sm);
-  padding: 10px 12px;
-  font-size: 12px;
-  font-weight: 600;
+  margin: 4px 0 10px 0;
 }
 
-/* Stats grid */
 .section-title {
   font-size: 15px;
   font-weight: 700;
-  margin: 20px 0 10px 0;
 }
 
+.range-pill {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 6px 12px;
+}
+
+.range-pill svg {
+  width: 12px;
+  height: 12px;
+}
+
+/* ===== Stats grid ===== */
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
+  margin-bottom: 22px;
 }
 
 .stat-box {
-  padding: 14px 10px;
-  text-align: center;
+  padding: 14px 12px;
+  border-radius: var(--radius-md);
+}
+
+.stat-top {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+}
+
+.stat-top svg {
+  width: 14px;
+  height: 14px;
+  stroke: var(--primary-bright);
 }
 
 .stat-value {
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 800;
+  margin-bottom: 10px;
 }
 
-.stat-label {
-  font-size: 11px;
-  color: var(--text-secondary);
-  margin-top: 2px;
+.sparkline {
+  width: 100%;
+  height: 20px;
+  display: block;
 }
 
-/* How it works */
+/* ===== How it works ===== */
 .flow-card {
   padding: 16px;
   margin-bottom: 10px;
   display: flex;
   gap: 12px;
   align-items: flex-start;
+  border-radius: var(--radius-md);
 }
 
 .flow-icon {
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   border-radius: var(--radius-sm);
   background: var(--primary-soft);
-  color: var(--primary);
+  color: var(--primary-bright);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  border: 1px solid var(--border-bright);
 }
 
 .flow-icon svg {
@@ -112,19 +264,23 @@
 
 .flow-text h3 {
   font-size: 13px;
-  font-weight: 600;
-  margin-bottom: 2px;
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+
+.flow-text h3 .accent {
+  color: var(--primary-bright);
 }
 
 .flow-text p {
   font-size: 12px;
   color: var(--text-secondary);
-  line-height: 1.4;
+  line-height: 1.45;
 }
 
 .note-text {
   font-size: 11px;
   color: var(--text-muted);
-  margin-top: 10px;
-  line-height: 1.5;
+  margin-top: 12px;
+  line-height: 1.6;
 }
