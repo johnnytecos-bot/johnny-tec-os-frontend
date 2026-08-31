@@ -1,0 +1,40 @@
+.quick-action-sheet {
+  position: absolute;
+  bottom: 90px;
+  left: 20px;
+  right: 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  z-index: 20;
+  animation: sheet-up 0.15s ease-out;
+}
+
+@keyframes sheet-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.quick-action-option {
+  width: 100%;
+  text-align: left;
+  padding: 14px 18px;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.quick-action-option:last-child {
+  border-bottom: none;
+}
+
+.quick-action-option:active {
+  background: var(--surface-soft);
+}
