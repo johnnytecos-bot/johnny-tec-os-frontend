@@ -1,8 +1,8 @@
 const QUICK_ACTIONS = [
-  { label: "View live status", action: () => (window.location.href = "/index.html") },
-  { label: "Open chats", action: () => (window.location.href = "/pages/chats.html") },
-  { label: "View memory", action: () => (window.location.href = "/pages/memory.html") },
-  { label: "Automations", action: () => (window.location.href = "/pages/automations.html") }
+  { label: "View live status", target: "index.html" },
+  { label: "Open chats", target: "pages/chats.html" },
+  { label: "View memory", target: "pages/memory.html" },
+  { label: "Automations", target: "pages/automations.html" }
 ];
 
 function initCenterButton() {
@@ -24,7 +24,9 @@ function initCenterButton() {
       const option = document.createElement("button");
       option.className = "quick-action-option";
       option.textContent = item.label;
-      option.addEventListener("click", item.action);
+      option.addEventListener("click", () => {
+        window.location.href = resolveNavTarget(item.target);
+      });
       sheet.appendChild(option);
     });
 
