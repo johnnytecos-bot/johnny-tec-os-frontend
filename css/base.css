@@ -1,0 +1,110 @@
+/* ===== Design tokens ===== */
+:root {
+  --bg-page: #E9ECFB;
+  --bg-gradient: linear-gradient(160deg, #EEF0FC 0%, #E3E7FA 100%);
+  --surface: #FFFFFF;
+  --surface-soft: #F5F6FD;
+
+  --primary: #4B54E0;
+  --primary-dark: #3A42C4;
+  --primary-soft: #EEF0FE;
+
+  --text-primary: #171B33;
+  --text-secondary: #6B7089;
+  --text-muted: #9B9FB5;
+
+  --online: #22C55E;
+  --offline: #E4574C;
+
+  --border: #E7E9F5;
+  --shadow-card: 0 8px 24px rgba(43, 48, 110, 0.08);
+  --shadow-nav: 0 -4px 20px rgba(43, 48, 110, 0.06);
+
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --radius-sm: 10px;
+
+  --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--bg-gradient);
+  color: var(--text-primary);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== Fixed app frame ===== */
+.app-frame {
+  width: 390px;
+  height: 844px;
+  background: var(--surface);
+  border-radius: 40px;
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-screen {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 20px 100px 20px;
+}
+
+.app-screen::-webkit-scrollbar {
+  display: none;
+}
+
+/* ===== Shared components ===== */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.pill-online {
+  background: rgba(34, 197, 94, 0.1);
+  color: var(--online);
+}
+
+.pill-offline {
+  background: rgba(228, 87, 76, 0.1);
+  color: var(--offline);
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+@media (max-width: 420px) {
+  .app-frame {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+  }
+}
