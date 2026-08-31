@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Chat - Johnny TEC OS</title>
+  <link rel="stylesheet" href="/css/base.css" />
+  <link rel="stylesheet" href="/css/chat-detail.css" />
+</head>
+<body>
+  <div class="app-frame">
+    <div class="app-screen" style="padding-bottom: 30px;">
+
+      <div class="chat-detail-header">
+        <button class="back-btn" onclick="window.location.href='/pages/chats.html'">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <div class="contact-avatar" id="chat-detail-avatar"></div>
+        <div class="chat-detail-info">
+          <div class="chat-detail-name" id="chat-detail-name">Loading…</div>
+          <div class="chat-detail-status">
+            <span class="dot"></span>Handled by Johnny
+          </div>
+        </div>
+      </div>
+
+      <div id="message-thread"></div>
+
+    </div>
+  </div>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/chat-detail.js"></script>
+</body>
+</html>
