@@ -1,8 +1,8 @@
 const QUICK_ACTIONS = [
-  { label: "View live status", action: () => (window.location.href = "index.html") },
-  { label: "Open chats", action: () => (window.location.href = "pages/chats.html") },
-  { label: "View memory", action: () => (window.location.href = "pages/memory.html") },
-  { label: "Automations", action: () => (window.location.href = "pages/automations.html") }
+  { label: "View live status", action: () => (window.location.href = "/index.html") },
+  { label: "Open chats", action: () => (window.location.href = "/pages/chats.html") },
+  { label: "View memory", action: () => (window.location.href = "/pages/memory.html") },
+  { label: "Automations", action: () => (window.location.href = "/pages/automations.html") }
 ];
 
 function initCenterButton() {
