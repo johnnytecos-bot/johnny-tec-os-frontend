@@ -1,9 +1,9 @@
 const NAV_ITEMS = [
-  { id: "home", label: "Home", href: "index.html" },
-  { id: "chats", label: "Chats", href: "pages/chats.html" },
+  { id: "home", label: "Home", href: "/index.html" },
+  { id: "chats", label: "Chats", href: "/pages/chats.html" },
   { id: "center", label: "", href: null },
-  { id: "automations", label: "Automations", href: "pages/automations.html" },
-  { id: "memory", label: "Memory", href: "pages/memory.html" }
+  { id: "automations", label: "Automations", href: "/pages/automations.html" },
+  { id: "memory", label: "Memory", href: "/pages/memory.html" }
 ];
 
 const NAV_ICONS = {
